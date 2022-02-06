@@ -1,0 +1,67 @@
+ JDBC:
+ 
+ jdbc is API application which used to connect database from our java application.
+ 
+ Driver is used to access data from different application and sending data to java to db and db to java.
+ 
+ Different types of drives are there.
+ 
+ type 1(jdbc odbc driver)
+ type 2 (native driver)
+ type 3 (partially java and partially odbc drivers)
+ 
+ Nowadays we are not using type1,type2,type3 drivers. only using type 4 driver(Pure java driver).
+ 
+ nowadays we are using type4 driver. Its a thin driver.
+ 
+ jar - java archieve file. We need to add the jar file.
+ 
+mysqlconnector jar is used to connect java to db. we are using mysql8 connector. we need to add it in build path.
+
+java.sql package we will use. There are classess and interfaces are present in java.sql. 
+
+
+interfaces:
+
+1) connection interface -> which is used to connect database. 
+2) statement -> After connecting the db, we need to mention which table to be used. So that statement interface is used. using one statement object we can execute only one sql query.
+if we use batch then it goes to db at a time. But execute one by one.
+3) result set -> its a database cursor. used to store all the result of the query. Query contains result. If we want to process or display in java, then result set is used.
+
+Instead of statement we can use prepared statement also. Either we can use statement or prepared statement. Prepared statement is secured.
+prepared statement is used to execute dynamic queries. Its sub interface of statement.
+
+
+classes:
+
+1) Class -> used to mention where is our driver is available. it contains the method forName which is used to mention where the driver is. 
+forName(driver location)
+2) DriverManager -> used to register the driver. Register the mysql. In mysql, which database is to connect, url and username and password of the mysql.
+getConnection(url,username,password)
+
+
+under Statement interface we have two methods.
+
+1) executeQuery() -> used to select queries. It returns result set interface. ResultSet is iterator.
+2) executeUpdate() -> used to insert,update,delete,create. it return int value which is number of records getting updated.
+
+Why statement interface is not secured?
+
+due to sqlinjection. So that preparedstatement interface is suggestable.
+
+
+In prepare statement, before going to execute the query itself we can validate the data passed. 
+
+callablestatement is an interface. prepareCall() is a method
+
+metadata -> database meta data, resultset meta data.
+connection.getMetaData() -> returns database metadata.
+resultset.getMetaData() -> returns result set metadata.
+
+callablestatements are used to execute store procedures. 
+
+ResourceBundle class is used to read the property file. its under java.util package. 
+getBundle() -> used to read the property file.
+
+Why callable statements?
+its used to call procedure which is available in mysql.

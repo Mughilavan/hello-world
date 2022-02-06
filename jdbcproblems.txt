@@ -1,0 +1,9 @@
+1) create a database named mydb in mysql workbench. 
+user name of the db is root and password is root.
+create a table name employee and its fields are id(primary key),name and salary. 
+And then insert a record.
+And then insert multiple record.
+And then select the employee table.
+
+prepare statement use.
+then get input from the user and perform insert using prepare statement.
